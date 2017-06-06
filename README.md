@@ -1,4 +1,5 @@
 # Denkovi Relais Plug
+[![Build Status](https://travis-ci.org/jo-nas/denkovi_plug.svg?branch=master)](https://travis-ci.org/jo-nas/denkovi_plug) [![Coverage Status](https://coveralls.io/repos/github/jo-nas/denkovi_plug/badge.svg?branch=master)](https://coveralls.io/github/jo-nas/denkovi_plug?branch=master)  
 A package for openhtf plugs to control the denkovi relay boards.
 
 ## Installation
