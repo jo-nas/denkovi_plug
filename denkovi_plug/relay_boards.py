@@ -11,9 +11,7 @@ __email__ = 'jonas@steinka.mp'
 
 
 class FourChannelBoard(denkovi_plug.BaseRelayPlug):
-    @conf.save_and_restore(ident_code='DAE002hw')
-    def __init__(self):
-        super(self.__class__, self).__init__()
+    IDENTIFICATION_CODE = 'DAE002hw'
 
     @property
     def channel_1(self):
@@ -60,9 +58,7 @@ class FourChannelBoard(denkovi_plug.BaseRelayPlug):
 
 
 class EightChannelBoard(FourChannelBoard):
-    @conf.save_and_restore(ident_code='DAE002hw')
-    def __init__(self):
-        super(self.__class__, self).__init__()
+    IDENTIFICATION_CODE = 'DAE002hw'
 
     @property
     def channel_5(self):
@@ -98,9 +94,9 @@ class EightChannelBoard(FourChannelBoard):
 
 
 class SixTeenChannelBoard(EightChannelBoard):
-    def __init__(self):
+    def __init__(self, ident_code='DAE002OHA'):
         self._output = None
-        self.connection = self.find_device("DAE002OHA")
+        self.connection = self.find_device(ident_code)
         self.all = False
 
     def tearDown(self):

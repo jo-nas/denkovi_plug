@@ -19,15 +19,17 @@ class DeviceNotFoundException(Exception):
 class InvalidPinException(Exception):
     pass
 
-conf.declare('ident_code', description='The name of the Device.')
+conf.declare('ident_code', description='The name of the Device.', default_value=None)
 
 
 class BaseRelayPlug(plugs.BasePlug):
+    IDENTIFICATION_CODE = None
+
     @conf.inject_positional_args
     def __init__(self, ident_code):
         self._output = None
         self.connection = gpio.GpioController()
-        self.ident_code = ident_code
+        self.ident_code = ident_code if ident_code else self.IDENTIFICATION_CODE
 
         self.open()
         self.output = ALL_OFF
