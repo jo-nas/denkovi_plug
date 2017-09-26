@@ -94,7 +94,7 @@ class EightChannelBoard(FourChannelBoard):
 
 
 class SixTeenChannelBoard(EightChannelBoard):
-    def __init__(self, ident_code='DAE002OHA'):
+    def __init__(self, ident_code='DAE002oH'):
         self._output = None
         self.connection = self.find_device(ident_code)
         self.all = False
