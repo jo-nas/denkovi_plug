@@ -222,7 +222,3 @@ class SixTeenChannelBoard(EightChannelBoard):
             self.output = 0xFFFF
         else:
             self.output = 0x00000
-
-if __name__ == '__main__':
-    relayboard = SixTeenChannelBoard()
-    relayboard.channel_16 = True
